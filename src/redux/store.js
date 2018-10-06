@@ -6,7 +6,7 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
 
 export default function configureStore(initialState) {
-	if(__DEV__){
+	if(process.env.NODE_ENV !== 'production'){
 		return createStore(
 			rootReducer,
 			initialState,
