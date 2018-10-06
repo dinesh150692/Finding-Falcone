@@ -1,0 +1,7 @@
+.labelDisabled{
+    color: rgba(128,128,128, 0.5);
+}
+
+.labelEnabled{
+    color: black;
+}
