@@ -6,9 +6,17 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
 
 export default function configureStore(initialState) {
-	return createStore(
-		rootReducer,
-		initialState,
-	    applyMiddleware(ReduxThunk, logger)
-	);
+	if(__DEV__){
+		return createStore(
+			rootReducer,
+			initialState,
+			applyMiddleware(ReduxThunk, logger)
+		);
+	}else{
+		return createStore(
+			rootReducer,
+			initialState,
+			applyMiddleware(ReduxThunk)
+		);
+	}
 }
