@@ -1,4 +1,4 @@
-@media( min-width: 768px){
+@media( min-width: 1024px){
     .planetSelectContainer{
         display: flex;
         flex-direction: row;
@@ -14,7 +14,7 @@
     }
 }
 
-@media(max-width: 768px){
+@media(max-width: 1024px){
     .planetFinderContainer{
         overflow: scroll;
         max-height: 78vh;
