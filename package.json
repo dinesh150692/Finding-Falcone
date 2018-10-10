@@ -2,7 +2,7 @@
   "name": "findingfalcone",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://dineshkumar.github.io/findingFalcone",
+  "homepage": "http://dineshkumar.github.io/findingFalcone",
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -26,5 +26,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "react-test-renderer": "^16.5.2"
+  }
 }
