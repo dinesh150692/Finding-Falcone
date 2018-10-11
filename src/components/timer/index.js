@@ -7,23 +7,40 @@ import { updateTimeTaken } from '../../redux/actions/gameActions';
 /* Style Imports */
 import './style.css';
 
-const Timer = (props) => {
-    let timeTaken = 0; 
-    let planetDistanceList = [];
-    props.planetSelectionList.map((item)=> {
-        planetDistanceList.push(props.planetMap[item]); 
-        return item;
-    });
-    props.vehicleSelectionList.map((item,index)=> {
-        timeTaken += planetDistanceList[index]/props.vehicleMap[item]
-        return item;
-    })
-    !isNaN(timeTaken) && timeTaken !== 0 && props.updateTimeTaken(timeTaken)
-    return (
-       <div className="timerContainer">
-           Time Taken: {timeTaken}
-       </div>
-    )
+class Timer extends React.Component{
+    constructor(){
+        super();
+        this.state = {
+            timeTaken: 0
+        }
+    }
+    
+    componentWillUnmount(){
+        this.props.updateTimeTaken(this.state.timeTaken);
+    }
+    
+    componentDidUpdate(){
+        let timeTaken = 0;
+        let { props } = this; 
+        let planetDistanceList = [];
+        props.planetSelectionList.map((item)=> {
+            planetDistanceList.push(props.planetMap[item]); 
+            return item;
+        });
+        props.vehicleSelectionList.map((item,index)=> {
+            timeTaken += planetDistanceList[index]/props.vehicleMap[item]
+            return item;
+        })
+        !isNaN(timeTaken) && timeTaken !== 0 && this.state.timeTaken !==  timeTaken && this.setState({timeTaken})
+    }
+
+    render(){
+        return (
+            <div className="timerContainer">
+                Time Taken: {this.state.timeTaken}
+            </div>
+        )
+    }
 }
 
 /** 

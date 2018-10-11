@@ -17,7 +17,7 @@ class VehicleSelection extends React.Component{
     render(){
         let { props } = this;
         return (
-            <div className="planetContainer">
+            <div className="planetContainer1">
                 <form>
                     {  props.show && props.vehicles.map(item => {
                         let count = props.vehicleSelectionList.filter((element, index) => element === item.name && index <= props.step).length
