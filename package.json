@@ -2,8 +2,9 @@
   "name": "findingfalcone",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://dineshkumar.github.io/findingFalcone",
+  "homepage": "https://secure-inlet-85208.herokuapp.com",
   "dependencies": {
+    "express": "^4.16.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
@@ -16,7 +17,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "local_run": "NODE_ENV=development node server.js",
+    "prod_run": "NODE_ENV=production node server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
