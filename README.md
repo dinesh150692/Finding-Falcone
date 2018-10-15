@@ -31,3 +31,10 @@ Your app is ready to be deployed!
 See the section about [deployment](#deployment) for more information.
 
 ### `npm run eject`
+
+
+### `npm run local_run`
+To run your app as SSR with environment as development
+
+### `npm run prod_run`
+To run your app as SSR with environment as production
